@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.14]
+### Changed
+- Added sdr device index
+
 ## [0.1.13b]
 ### Bug fixing
 - Removed null device ID from new channel definition
