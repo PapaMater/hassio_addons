@@ -23,6 +23,7 @@ WHITELIST="$(jq --raw-output '.whitelist' $CONFIG_PATH)"
 UNITS="$(jq --raw-output '.units' $CONFIG_PATH)"
 DISCOVERY_PREFIX="$(jq --raw-output '.discovery_prefix' $CONFIG_PATH)"
 DISCOVERY_INTERVAL="$(jq --raw-output '.discovery_interval' $CONFIG_PATH)"
+SDR_DEVICE_INDEX="$(jq --raw-output '.sdr_device_index' $CONFIG_PATH)"
 DEBUG="$(jq --raw-output '.debug' $CONFIG_PATH)"
 
 # Start the listener and enter an endless loop
@@ -40,8 +41,9 @@ echo "FREQUENCY =" $FREQUENCY
 echo "UNITS =" $UNITS
 echo "DISCOVERY_PREFIX =" $DISCOVERY_PREFIX
 echo "DISCOVERY_INTERVAL =" $DISCOVERY_INTERVAL
+echo "SDR DEVICE INDEX =" $SDR_DEVICE_INDEX
 echo "DEBUG =" $DEBUG
 
 
 
-rtl_433 $FREQUENCY $PROTOCOL -C $UNITS  -F mqtt://$MQTT_HOST:$MQTT_PORT,user=$MQTT_USERNAME,pass=$MQTT_PASSWORD,retain=$MQTT_RETAIN,events=$MQTT_TOPIC/events,states=$MQTT_TOPIC/states,devices=$MQTT_TOPIC[/model][/id][/channel:0]  -M time:tz:local -M protocol -M level | /scripts/rtl_433_mqtt_hass.py
+rtl_433 $FREQUENCY $PROTOCOL -d $SDR_DEVICE_INDEX -C $UNITS  -F mqtt://$MQTT_HOST:$MQTT_PORT,user=$MQTT_USERNAME,pass=$MQTT_PASSWORD,retain=$MQTT_RETAIN,events=$MQTT_TOPIC/events,states=$MQTT_TOPIC/states,devices=$MQTT_TOPIC[/model][/id][/channel:0]  -M time:tz:local -M protocol -M level | /scripts/rtl_433_mqtt_hass.py
