@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.16]
+### Added
+- Added support for usb sdr device index
+
 ## [0.3.15b]
 ### Bug fixing
 - Typo...I swear
