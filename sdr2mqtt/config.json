@@ -23,6 +23,7 @@
     "units": "si",
     "discovery_prefix": "homeassistant",
     "discovery_interval": 600,
+    "sdr_device_index": 0,
     "debug": "false"
   },
   "schema":
@@ -40,6 +41,7 @@
     "units": "str",
     "discovery_prefix": "str",
     "discovery_interval": "int",
+    "sdr_device_index": "int"
     "debug": "bool"
    }
 }
