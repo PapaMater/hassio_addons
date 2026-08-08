@@ -1,5 +1,5 @@
 {
-  "name": "Home Assistant Add-ons: Slacker Labs",
-  "url": "https://github.com/thejeffreystone/hassio-addons",
-  "maintainer": "Jeffrey Stone"
+  "name": "Home Assistant Add-ons: SDR",
+  "url": "https://github.com/PapaMater/hassio_addons",
+  "maintainer": "Aaron Woldeit"
 }
